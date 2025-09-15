@@ -14,8 +14,8 @@ on:
 
 jobs:
   sync_latest_from_upstream:
-    runs-on: ubuntu-latest
     name: Sync latest commits from upstream repo
+    runs-on: ubuntu-latest
 
     steps:
     # REQUIRED step
