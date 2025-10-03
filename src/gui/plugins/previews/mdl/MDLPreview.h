@@ -12,17 +12,13 @@
 #include <QOpenGLVertexArrayObject>
 #include <QOpenGLWidget>
 
+#include "../IVPKEditPreviewPlugin_V1_0.h"
+
 namespace mdlpp {
 
 struct BakedModel;
 
 } // namespace mdlpp
-
-namespace vpkpp {
-
-class PackFile;
-
-} // namespace vpkpp
 
 class QCheckBox;
 class QKeyEvent;
@@ -32,9 +28,6 @@ class QTabWidget;
 class QTimerEvent;
 class QToolButton;
 class QTreeWidget;
-
-class FileViewer;
-class Window;
 
 struct AABB {
 	[[nodiscard]] QList<QVector3D> getCorners() const;
@@ -63,10 +56,20 @@ enum class MDLShadingMode {
 	SHADED_TEXTURED = 3,
 };
 
+struct MDLTextureSettings {
+	enum class TransparencyMode {
+		NONE,
+		ALPHA_TEST,
+		TRANSLUCENT,
+	} transparencyMode = TransparencyMode::NONE;
+	float alphaTestReference = 0.7f;
+};
+
 struct MDLTextureData {
 	std::vector<std::byte> data;
 	std::uint16_t width;
 	std::uint16_t height;
+	MDLTextureSettings settings;
 };
 
 class MDLWidget : public QOpenGLWidget, protected QOpenGLFunctions_3_3_Core {
@@ -132,7 +135,7 @@ private:
 	QOpenGLBuffer vertices{QOpenGLBuffer::Type::VertexBuffer};
 	int vertexCount;
 	std::vector<MDLSubMesh> meshes;
-	QList<QOpenGLTexture*> textures;
+	QList<QPair<QOpenGLTexture*, MDLTextureSettings>> textures;
 
 	int skin;
 	std::vector<std::vector<short>> skins;
@@ -154,38 +157,38 @@ private:
 	bool rmbBeingHeld;
 };
 
-class MDLPreview : public QWidget {
+class MDLPreview final : public IVPKEditPreviewPlugin_V1_0 {
 	Q_OBJECT;
+	Q_PLUGIN_METADATA(IID IVPKEditPreviewPlugin_V1_0_iid FILE "MDLPreview.json");
+	Q_INTERFACES(IVPKEditPreviewPlugin_V1_0);
 
 public:
-	static inline const QStringList EXTENSIONS {
-		".mdl",
-		".vtx",
-		".vvd",
-		".phy",
-		".ani",
-		".vta",
-	};
+	void initPlugin(IVPKEditPreviewPlugin_V1_0_IWindowAccess* windowAccess_) override;
 
-	explicit MDLPreview(FileViewer* fileViewer_, Window* window, QWidget* parent = nullptr);
+	void initPreview(QWidget* parent) override;
 
-	void setMesh(const QString& path, vpkpp::PackFile& packFile) const;
+	[[nodiscard]] QWidget* getPreview() const override;
+
+	[[nodiscard]] QIcon getIcon() const override;
+
+	Error setData(const QString& path, const quint8* dataPtr, quint64 length) override;
 
 private:
 	void setShadingMode(MDLShadingMode mode) const;
 
-	FileViewer* fileViewer;
+	IVPKEditPreviewPlugin_V1_0_IWindowAccess* windowAccess = nullptr;
+	QWidget* preview = nullptr;
 
-	QCheckBox* backfaceCulling;
-	QSpinBox* skinSpinBox;
-	QToolButton* shadingModeWireframe;
-	QToolButton* shadingModeShadedUntextured;
-	QToolButton* shadingModeUnshadedTextured;
-	QToolButton* shadingModeShadedTextured;
+	QCheckBox* backfaceCulling = nullptr;
+	QSpinBox* skinSpinBox = nullptr;
+	QToolButton* shadingModeWireframe = nullptr;
+	QToolButton* shadingModeShadedUntextured = nullptr;
+	QToolButton* shadingModeUnshadedTextured = nullptr;
+	QToolButton* shadingModeShadedTextured = nullptr;
 
-	MDLWidget* mdl;
+	MDLWidget* mdl = nullptr;
 
-	QTabWidget* tabs;
-	QTreeWidget* materialsTab;
-	QTreeWidget* allMaterialsTab;
+	QTabWidget* tabs = nullptr;
+	QTreeWidget* materialsTab = nullptr;
+	QTreeWidget* allMaterialsTab = nullptr;
 };

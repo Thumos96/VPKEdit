@@ -88,6 +88,7 @@ jobs:
             ${{env.BUILD_DIR}}/vpkedit.exe
             ${{env.BUILD_DIR}}/*.dll
             ${{env.BUILD_DIR}}/platforms/*.dll
+            ${{env.BUILD_DIR}}/previews/*.dll
             ${{env.BUILD_DIR}}/styles/*.dll
             ${{env.BUILD_DIR}}/tls/*.dll
           retention-days: 7
@@ -100,6 +101,7 @@ jobs:
           path: |
             ${{env.BUILD_DIR}}/vpkeditcli.exe
             ${{env.BUILD_DIR}}/vpkedit.exe
+            ${{env.BUILD_DIR}}/previews/*.dll
           retention-days: 7
 
       - name: Create Installer [target:VPKEdit]
@@ -155,6 +157,7 @@ jobs:
             ${{env.BUILD_DIR}}/vpkedit.exe
             ${{env.BUILD_DIR}}/*.dll
             ${{env.BUILD_DIR}}/platforms/*.dll
+            ${{env.BUILD_DIR}}/previews/*.dll
             ${{env.BUILD_DIR}}/styles/*.dll
             ${{env.BUILD_DIR}}/tls/*.dll
           retention-days: 7
@@ -242,8 +245,10 @@ jobs:
             chrpath -r '$ORIGIN' "$f"
           done
           for f in ${{env.BUILD_DIR}}/*/*.so*; do
-            echo "Fixing $f..."
-            chrpath -r '$ORIGIN/..' "$f"
+            if [[ "$f" != *previews* ]]; then
+              echo "Fixing $f..."
+              chrpath -r '$ORIGIN/..' "$f"
+            fi
           done
 
       - name: Upload Standalone [target:VPKEdit]
@@ -261,6 +266,7 @@ jobs:
             ${{env.BUILD_DIR}}/platforminputcontexts/*.so*
             ${{env.BUILD_DIR}}/platforms/*.so*
             ${{env.BUILD_DIR}}/platformthemes/*.so*
+            ${{env.BUILD_DIR}}/previews/*.so*
             ${{env.BUILD_DIR}}/tls/*.so*
             ${{env.BUILD_DIR}}/wayland-decoration-client/*.so*
             ${{env.BUILD_DIR}}/wayland-graphics-integration-client/*.so*
@@ -276,6 +282,7 @@ jobs:
           path: |
             ${{env.BUILD_DIR}}/vpkeditcli
             ${{env.BUILD_DIR}}/vpkedit
+            ${{env.BUILD_DIR}}/previews/*.so*
           retention-days: 7
 
       - name: Create Installer [target:VPKEdit]
@@ -341,6 +348,7 @@ jobs:
     needs:
       - build-windows
       - build-linux
+      - build-macos
     runs-on: ubuntu-latest
     steps:
       - name: Download Artifacts

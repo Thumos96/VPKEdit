@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 3.25 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.28 FATAL_ERROR)
 
 # set up project
 project(vpkedit
         DESCRIPTION "A CLI/GUI tool to create, read, and write several pack file formats."
-        VERSION "5.0.0.1"
+        VERSION "5.0.0.3"
         HOMEPAGE_URL "https://github.com/craftablescience/VPKEdit")
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -15,6 +15,7 @@ option(VPKEDIT_BUILD_INSTALLER "Build installer for VPKEdit GUI application" ON)
 # add helpers
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/helpers")
 include(CS_All)
+include(GNUInstallDirs)
 
 # extra metadata variables
 set(PROJECT_NAME_PRETTY "VPKEdit")
