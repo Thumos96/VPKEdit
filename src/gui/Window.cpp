@@ -292,7 +292,7 @@ Window::Window(QWidget* parent)
 			DiscordPresence::setDetails("Customizing character...");
 			DiscordPresence::setState("Ponyville Train Station");
 		} else {
-			DiscordPresence::init("1222285763459158056");
+			DiscordPresence::init("1430125405402300538");
 			DiscordPresence::setState("Editing an archive file");
 			DiscordPresence::setLargeImageText(PROJECT_TITLE.data());
 		}
