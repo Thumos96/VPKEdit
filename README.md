@@ -1,29 +1,29 @@
 <div>
-  <img align="left" width="44px" src="https://github.com/craftablescience/VPKEdit/blob/main/res/brand/logo_512.png?raw=true" alt="VPKEdit Logo" />
+  <img align="left" width="44px" src="https://github.com/Thumos96/VPKEdit/blob/master/res/brand/logo_512.png?raw=true" alt="VPKEdit Logo" />
   <h1>VPKEdit</h1>
 </div>
 
 VPKEdit is an open source MIT-licensed tool that can create, extract from, preview the contents of and write to several pack file formats.
 
 <div>
-  <a href="https://github.com/craftablescience/VPKEdit/blob/main/LICENSE" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/github/license/craftablescience/VPKEdit?label=license" alt="License" /></a>
-  <a href="https://github.com/craftablescience/VPKEdit/actions" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/github/actions/workflow/status/craftablescience/VPKEdit/build.yml?branch=main&label=builds" alt="Workflow Status" /></a>
+  <a href="https://github.com/Thumos96/VPKEdit/blob/master/LICENSE" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/github/license/Thumos96/VPKEdit?label=license" alt="License" /></a>
+  <a href="https://github.com/Thumos96/VPKEdit/actions" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/github/actions/workflow/status/Thumos96/VPKEdit/build.yml?branch=master&label=builds" alt="Workflow Status" /></a>
   <a href="https://discord.gg/ASgHFkX" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/discord/678074864346857482?label=discord&logo=Discord&logoColor=%23FFFFFF" alt="Discord" /></a>
   <a href="https://ko-fi.com/craftablescience" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/donate-006dae?label=ko-fi&logo=ko-fi" alt="Ko-Fi" /></a>
 </div>
 
 <div>
-  <img width="400px" src="https://github.com/craftablescience/VPKEdit/blob/main/res/brand/screenshot1.png?raw=true" alt="A screenshot of VPKEdit with a VPK and an MDL preview open in wireframe mode." />
-  <img width="400px" src="https://github.com/craftablescience/VPKEdit/blob/main/res/brand/screenshot2.png?raw=true" alt="A screenshot of VPKEdit with a VPK and an MDL preview open in shaded textured mode." />
+  <img width="400px" src="https://github.com/Thumos96/VPKEdit/blob/master/res/brand/screenshot1.png?raw=true" alt="A screenshot of VPKEdit with a VPK and an MDL preview open in wireframe mode." />
+  <img width="400px" src="https://github.com/Thumos96/VPKEdit/blob/master/res/brand/screenshot2.png?raw=true" alt="A screenshot of VPKEdit with a VPK and an MDL preview open in shaded textured mode." />
 </div>
 <div>
-  <img width="400px" src="https://github.com/craftablescience/VPKEdit/blob/main/res/brand/screenshot3.png?raw=true" alt="A screenshot of VPKEdit with a BSP and a VTF preview open." />
-  <img width="400px" src="https://github.com/craftablescience/VPKEdit/blob/main/res/brand/screenshot4.png?raw=true" alt="A screenshot of the command-line version of VPKEdit." />
+  <img width="400px" src="https://github.com/Thumos96/VPKEdit/blob/master/res/brand/screenshot3.png?raw=true" alt="A screenshot of VPKEdit with a BSP and a VTF preview open." />
+  <img width="400px" src="https://github.com/Thumos96/VPKEdit/blob/master/res/brand/screenshot4.png?raw=true" alt="A screenshot of the command-line version of VPKEdit." />
 </div>
 
 ## Installing
 
-Please read [this file](https://github.com/craftablescience/VPKEdit/blob/main/INSTALL.md) for step-by-step installation instructions. VPKEdit is available for Windows 7+ and
+Please read [this file](https://github.com/Thumos96/VPKEdit/blob/master/INSTALL.md) for step-by-step installation instructions. VPKEdit is available for Windows 7+ and
 macOS (arm64), and has been packaged for multiple Linux distributions.
 
 ## Features
@@ -77,7 +77,7 @@ macOS (arm64), and has been packaged for multiple Linux distributions.
 - User interface translated to the following languages ([support the translation effort here](https://poeditor.com/join/project/yxR9MLc9X2)):<br/>
   🇧🇦 🇨🇳 🇭🇷 🇳🇱 🇩🇪 🇮🇹 🇯🇵 🇰🇷 🇵🇱 🇧🇷 🇷🇺 🇸🇮 🇪🇸 🇸🇪 🇻🇳
 
-Please read [this file](https://github.com/craftablescience/VPKEdit/blob/main/CONTROLS.md) to see all keyboard shortcuts.
+Please read [this file](https://github.com/Thumos96/VPKEdit/blob/master/CONTROLS.md) to see all keyboard shortcuts.
 
 A separate application with no external dependencies (`vpkeditcli`) provides a command-line interface.
 

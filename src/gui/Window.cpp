@@ -290,24 +290,9 @@ Window::Window(QWidget* parent)
 	// Not translating this menu name, the translation is the same everywhere
 	auto* discordMenu = optionsMenu->addMenu(QIcon{":/icons/discord.png"}, "Discord...");
 	const auto setupDiscordRichPresence = [] {
-		auto time = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-#ifdef _WIN32
-		std::tm currentTimeVal{};
-		localtime_s(&currentTimeVal, &time);
-		auto* currentTime = &currentTimeVal;
-#else
-		auto* currentTime = std::localtime(&time);
-#endif
-		if (currentTime->tm_mon == 3 && currentTime->tm_mday == 1) {
-			// its april 1st you know what that means
-			DiscordPresence::init("1232981268472533032");
-			DiscordPresence::setDetails("Customizing character...");
-			DiscordPresence::setState("Ponyville Train Station");
-		} else {
-			DiscordPresence::init("1222285763459158056");
-			DiscordPresence::setState("Editing an archive file");
-			DiscordPresence::setLargeImageText(PROJECT_TITLE.data());
-		}
+		DiscordPresence::init("1430125405402300538");
+		DiscordPresence::setState("Editing an archive file");
+		DiscordPresence::setLargeImageText(PROJECT_TITLE.data());
 		DiscordPresence::setLargeImage("icon");
 		DiscordPresence::setStartTimestamp(std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now().time_since_epoch()).count());
 		DiscordPresence::setTopButton({"View on GitHub", std::string{PROJECT_HOMEPAGE}});
