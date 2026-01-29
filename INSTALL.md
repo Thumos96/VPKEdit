@@ -23,17 +23,17 @@ VPKEdit is on the Windows package registry, so you only need to run one command 
 ###### Manual:
 
 1. You will need to install the VS2015-2022 runtime located at https://aka.ms/vs/17/release/vc_redist.x64.exe.
-2. When that is installed, download either the standalone version or the installer version from [the latest
-   GitHub release](https://github.com/craftablescience/VPKEdit/releases/latest), under the `Assets` dropdown.
+2. When that is installed, download either the standalone version (VPKEdit-Windows-Standalone-msvc-Release) or the installer version (VPKEdit-Windows-Installer-msvc-Release) from [the latest
+   GitHub release](https://github.com/Thumos96/VPKEdit/releases/latest), under the `Assets` dropdown.
    - Note that if you are using Windows 7, 8, or 8.1, you will need to download the "Compatibility" version of the GUI for
      it to work. The CLI will work on any OS.
-3. If you downloaded the standalone files, you're done, just unzip the files. If you downloaded the installer,
-   unzip the installer application and run it. When running the application Windows will give you a safety warning,
-   ignore it and hit `More Info` → `Run Anyway`.
+3. If you downloaded the standalone files, you're done. Just unzip the files. If you downloaded the installer,
+   unzip the installer application and run the executable file. When running the application, Windows will give you a safety warning.
+   Ignore it and hit `More Info` → `Run Anyway`.
 
 ## macOS
 
-Install VPKEdit through the DMG installer in [the latest GitHub release](https://github.com/craftablescience/VPKEdit/releases/latest),
+Install VPKEdit through the DMG installer in [the latest GitHub release](https://github.com/Thumos96/VPKEdit/releases/latest),
 under the `Assets` dropdown. No standalone build or `x86_64` builds are provided for this platform.
 
 Note that since builds are not signed by Apple, there is one more necessary step. Go to `System Settings` ->
