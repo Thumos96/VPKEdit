@@ -11,14 +11,7 @@ platforms:
 
 ###### Automatic (Windows 10+):
 
-VPKEdit is on the Windows package registry, so you only need to run one command to install VPKEdit or update to the latest version:
-1. Press `Win + R`
-2. In the popup window, enter `winget install vpkedit` into the prompt and press "Ok".
-
-> [!WARNING]
-> - The version on WinGet is usually slightly out of date. If you want to make sure you are installing the very latest stable release,
->   continue to the Manual section.
-> - This will not install the standalone version. If you wish to use that, continue to the Manual section.
+Currently, this fork of VPKEdit is not in the Windows Package Manager. For now, you can install the latest version manually using the following instructions below.
 
 ###### Manual:
 
