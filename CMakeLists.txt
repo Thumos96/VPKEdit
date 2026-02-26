@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.28 FATAL_ERROR)
 project(vpkedit
         DESCRIPTION "A CLI/GUI tool to create, read, and write several pack file formats."
         VERSION "5.0.0.5"
-        HOMEPAGE_URL "https://github.com/craftablescience/VPKEdit")
+        HOMEPAGE_URL "https://github.com/Thumos96/VPKEdit")
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -20,8 +20,8 @@ include(GNUInstallDirs)
 # extra metadata variables
 set(PROJECT_NAME_PRETTY "VPKEdit")
 cs_version_pretty() # PROJECT_VERSION_PRETTY
-set(PROJECT_ORGANIZATION_NAME "craftablescience" CACHE INTERNAL "" FORCE)
-set(PROJECT_HOMEPAGE_URL_API "https://api.github.com/repos/craftablescience/VPKEdit" CACHE INTERNAL "" FORCE)
+set(PROJECT_ORGANIZATION_NAME "Thumos96" CACHE INTERNAL "" FORCE)
+set(PROJECT_HOMEPAGE_URL_API "https://api.github.com/repos/Thumos96/VPKEdit" CACHE INTERNAL "" FORCE)
 
 # initial VS integration
 cs_setup_vs_defaults(STARTUP_PROJECT "${PROJECT_NAME}")
